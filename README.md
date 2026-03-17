@@ -82,7 +82,7 @@ Add the following to your Homebox `.env`:
 HBOX_LABEL_MAKER_LABEL_SERVICE_URL=http://<this-machine-ip>:8099
 HBOX_LABEL_MAKER_WIDTH=991
 HBOX_LABEL_MAKER_HEIGHT=306
-HBOX_LABEL_MAKER_PRINT_COMMAND=curl -s -X POST http://<pi-ip>:8013/api/print/image -F image=@{{.FileName}} -F label_size=29x90
+HBOX_LABEL_MAKER_PRINT_COMMAND=curl -s -X POST http://<ip-of-print-server>:8013/api/print/image -F image=@{{.FileName}} -F label_size=29x90
 ```
 
 Then restart Homebox:
