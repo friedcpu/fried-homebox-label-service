@@ -1,6 +1,6 @@
 # fried-homebox-label-service
 > [!WARNING]
-> This project was vibe coded with AI assistance. It works, but the code may not be production quality. Use at your own risk.
+> This project was coded with AI assistance. Mainly because I haven't coded much in 20 years and it saved a lot of time.
 
 An external label service for [Homebox](https://homebox.software) inventory management. Generates landscape PNG labels for Brother QL label printers, with a large QR code on the left and the location name and domain centered on the right.
 
