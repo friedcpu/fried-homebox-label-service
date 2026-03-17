@@ -2,7 +2,9 @@
 > [!WARNING]
 > This project was coded with AI assistance. Mainly because I haven't coded much in 20 years and it saved a lot of time.
 
-An external label service for [Homebox](https://homebox.software) inventory management. Generates landscape PNG labels for Brother QL label printers, with a large QR code on the left and the location name and domain centered on the right.
+An external label service for [Homebox](https://homebox.software) inventory management, with optional instructions on how to make homebox use brother-ql-web print server.
+
+Everything shoudl be able to be modified to fit whatever labels you have.
 
 ![Label example](example.png)
 
@@ -19,6 +21,8 @@ An external label service for [Homebox](https://homebox.software) inventory mana
 - Python 3.11+
 - DejaVu Sans fonts (`sudo apt install fonts-dejavu-core`)
 - A Brother QL label printer (tested with QL-700)
+
+## Optional
 - [FriedrichFroebel/brother_ql_web](https://github.com/FriedrichFroebel/brother_ql_web) for print server
 
 ## Installation
@@ -84,14 +88,14 @@ Add the following to your Homebox `.env`:
 HBOX_LABEL_MAKER_LABEL_SERVICE_URL=http://<this-machine-ip>:8099
 HBOX_LABEL_MAKER_WIDTH=991
 HBOX_LABEL_MAKER_HEIGHT=306
+```
+
+Optional, if you are using the brother-ql-web print server:
+```
 HBOX_LABEL_MAKER_PRINT_COMMAND=curl -s -X POST http://<ip-of-print-server>:8013/api/print/image -F image=@{{.FileName}} -F label_size=29x90
 ```
 
-Then restart Homebox:
-
-```bash
-systemctl restart homebox
-```
+Then restart Homebox
 
 ## Label Dimensions
 
