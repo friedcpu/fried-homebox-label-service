@@ -52,11 +52,11 @@ python3 label_service.py
 
 ### Running as a systemd service
 
-Create `/etc/systemd/system/label-service.service`:
+Create `/etc/systemd/system/fried-homebox-label-service.service`:
 
 ```ini
 [Unit]
-Description=Homebox Label Service
+Description=FRiEd Homebox Label Service
 After=network.target
 
 [Service]
@@ -72,8 +72,8 @@ WantedBy=multi-user.target
 
 ```bash
 systemctl daemon-reload
-systemctl enable label-service
-systemctl start label-service
+systemctl enable fried-homebox-label-service
+systemctl start fried-homebox-label-service
 ```
 
 ## Homebox Configuration
